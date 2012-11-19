@@ -1,0 +1,344 @@
+/*
+Print Style designed by Suleiman Leadbitter (found lurking around at http://suljam.com & http://sulcalibur.com) for the <em class="nose">mighty</em> Paul Boag
+Based on previous work by -
+
+.nose {
+color: rgb(104, 86, 66)
+	}
+
+Ref: This is the ref just so you know :). ok. k hmmm why is this not working?
+
+This work can also be found at [Github Page]
+
+*/
+
+// Sass Variables
+
+// Colours
+$primary: rgba(98, 123, 16, 1.0) !important; // Green colour
+$secondary: rgba(239, 155, 69, 1.0) !important; // Peach colour
+$third: #6699CC !important;
+
+// Sass Mixins
+// This sheet is mixin-deficient
+
+
+
+@media print {
+
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+  /* Black prints faster: h5bp.com/s */
+
+  // .print_only { display:none; }
+
+  @page {
+    margin: 1.5cm 3.5cm;
+
+    :first {content: "Please think of the trees before printing this out. Maybe sending to a service such as Instapaper or Pocket would be better.";}
+
+    @bottom-center {content: "default footer awesomeness";}
+  }
+
+  a, a:visited {
+    text-decoration: none;
+    opacity: 0.8;
+  }
+
+  //a[href]:after {content: " (" attr(href) ")";}
+
+  abbr[title]:after {content: " (" attr(title) ")";}
+
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+
+  pre, blockquote {border: 1px solid #999; page-break-inside: avoid;}
+
+  thead {display: table-header-group;} /* h5bp.com/t */
+
+  tr, img {page-break-inside: avoid;}
+
+  p, h1, h2, h3 {orphans: 3; widows: 3;}
+
+  h2, h3 {page-break-after: avoid;}
+
+  body {
+    //font-family: Helvetica, Verdana, sans-serif;
+    font: 12pt Georgia, "Times New Roman", Times, serif; line-height: 1.3;
+  }
+
+  #wrapper {
+    clear: both !important;
+    display: block !important;
+    float: none !important;
+    position: relative !important;
+  }
+
+
+  h1 { font-size: 24pt; }
+
+  h2, h3, h4 {font-size: 18pt; color: $secondary;}
+
+  h5, h6 {font-size: 16pt; color: $secondary;}
+
+  p {font-size: 14pt;}
+
+  ul {list-style: disc;}
+
+  li {
+    //content: "» ";
+    font-size: 80%;
+  }
+
+  blockquote {
+    border: none;
+    padding-left: 1cm;
+    border-left: 1px solid #ccc;
+    margin: 1cm 0;
+    page-break-inside: avoid;
+
+    cite {
+      float: right;
+      opacity: 0.6;
+      margin-top: 0.3cm;
+    }
+  }
+
+  figcaption {
+    font-style: italic;
+    font-size: 10pt;
+    opacity: 0.6;
+  }
+
+  pre.language-markup {
+    padding: 0.5cm;
+    border: 1px solid grey;
+  }
+
+  code.language-markup {
+    font-family: monospace, sans-serif;
+    font-size: 80%;
+    opacity: 1;
+
+    span.tag {opacity: 0.7;}
+  }
+
+  /* The forever all important Display None for print */
+  #main-nav,
+  form,
+  .cat,
+  #read-time,
+  #comments,
+  #community,
+  #pageFooter,
+  .t-photo,
+  p.answer,
+  #about-boagworld,
+  #branding
+  {display: none!important;}
+
+  .author {
+    text-align: center;
+    color: #ccc;
+    font-size: 85%;
+    text-decoration: italic;
+    opacity: 0.5;
+    img {display: none;}
+    a[href]:after {
+      content: " "" ";
+      }
+
+    a:link {text-decoration: none;}
+    &:before {content: url(../media/flourish-left.png) no-repeat; opacity: 0.2;}
+    &:after {content: url(../media/flourish-right.png) no-repeat; opacity: 0.2;}
+  }
+
+  #main {
+
+    article {
+
+      p {
+        text-align: justify;
+        font-size: 80%;
+
+        &.intro {
+          font-size: 100%;
+          font-style: italic;
+          opacity: 0.7;
+          margin: 1cm 0.5cm;
+          color: $third;
+        }
+
+        a {
+          word-wrap: break-word;
+        }
+
+      }
+
+      .announcement {display: none;}
+
+      .meta {
+
+        h1 {
+          padding: 0 1cm 1cm 1cm;
+          margin-bottom: 0.5cm;
+          text-align: center;
+          font-family: Palatino, serif;
+          font-size: 180%;
+          border-bottom: 1px grey dotted;
+          // color: #EF9A4E !important; //
+          // color: rgba(98, 123, 16, 1.0) !important; //Green
+          color: $primary;
+
+
+          //&:before {content: url(../media/flourish-left.png) no-repeat; opacity: 0.5;}
+          //&:after {content: url(../media/flourish-right.png) no-repeat; opacity: 0.5;}
+        }
+
+      }
+
+    }
+
+    &:after {
+          display: block;
+          content: "Web design advise is provided by the digital agency Headscape Ltd. For more on Headscape visit headscape.co.uk or to view other books, videos and fact sheets go to boagworld.com/books/. Thank you.";
+          margin: 0.5cm;
+          border-top: 1px solid #e1e1e1;
+          padding: 0.5cm;
+          font-style: italic;
+          font-size: 60%;
+        }
+
+  }
+
+  .bob {
+    font-size: 100%;
+    text-decoration: italic;
+    margin: 1cm 0;
+    opacity: 0.6;
+    page-break-inside: avoid;
+  }
+
+  .video-container {
+    display: none;
+    object[href]:after {
+    content: " (" attr(href) ")";
+    }
+
+  }
+
+  video, audio, object, embed {
+    //display: none;
+  }
+
+  /* Add in a similar rule for audio if you add any */
+    .video-container + figcaption {
+
+      &:before {
+        display: block;
+        content: "This is an interactive element such as an audio clip or video, please visit the website to experience this, thank you.";
+        margin: 0.5cm;
+        border-top: 1px dotted #e1e1e1;
+        border-bottom: 1px dotted #e1e1e1;
+        padding: 0.5cm;
+        font-style: italic;
+        page-break-inside: avoid;
+      }
+    }
+
+
+  #user-question {
+
+    cite {
+      text-align: right;
+      font-size: 10pt;
+      width: 100%;
+      opacity: 0.6;
+      display: block;
+      padding-bottom: 1cm;
+      margin-bottom: 1cm;
+      border-bottom: 1px grey dotted;
+
+      &:before {content: "Posted by: ";}
+
+    }
+
+    blockquote {
+
+      padding-left: 0;
+      border-left: none;
+
+      p {
+        font-size: 100%;
+        font-style: italic;
+        opacity: 0.7;
+        margin: 1cm 0.5cm 0.3cm 0.5cm;
+        color: $third;
+      }
+    }
+  }
+
+  @page {
+    counter-increment: page;
+
+    @top-left {
+      content: "Hamlet";
+    }
+    @top-right {
+      content: "Page " counter(page);
+    }
+
+    @top-center {
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 2em;
+      content: counter(page);
+    }
+  }
+
+  #latestPosts {
+
+    article {
+
+      header {
+
+        h1 {
+          font-size: 80%;
+        }
+      }
+    }
+  }
+  #coming-soon {
+    article {
+      header {
+        h1 {
+          font-size: 80%;
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+
+
+
+
+  // To make the images greyscale
+
+  img {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+
+    padding: 0.1cm;
+    border: 1px solid grey;
+    max-width: 100% !important;
+    }
+
+} // @media end
+
