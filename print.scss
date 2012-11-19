@@ -1,15 +1,10 @@
 /*
-Print Style designed by Suleiman Leadbitter (found lurking around at http://suljam.com & http://sulcalibur.com) for the <em class="nose">mighty</em> Paul Boag
-Based on previous work by -
+Print Style designed by Suleiman Leadbitter (found lurking around at http://sulc.me/UP8NyZ) for the <em class="nose">
+mighty</em> Paul Boag
 
-.nose {
-color: rgb(104, 86, 66)
-	}
+Based and adapted on previous work by - HTML5 Boilerplate  and a massive thanks to Christian Krammer http://sulc.me/Uacg0v
 
-Ref: This is the ref just so you know :). ok. k hmmm why is this not working?
-
-This work can also be found at [Github Page]
-
+This original Sass file can also be found on Github at - http://sulc.me/UP7zUl
 */
 
 // Sass Variables
@@ -21,8 +16,6 @@ $third: #6699CC !important;
 
 // Sass Mixins
 // This sheet is mixin-deficient
-
-
 
 @media print {
 
@@ -40,9 +33,9 @@ $third: #6699CC !important;
   @page {
     margin: 1.5cm 3.5cm;
 
-    :first {content: "Please think of the trees before printing this out. Maybe sending to a service such as Instapaper or Pocket would be better.";}
+    //:first {content: "Please think of the trees before printing this out. Maybe sending to a service such as Instapaper or Pocket would be better.";}
 
-    @bottom-center {content: "default footer awesomeness";}
+    //@bottom-center {content: "default footer awesomeness";}
   }
 
   a, a:visited {
@@ -128,6 +121,7 @@ $third: #6699CC !important;
   }
 
   /* The forever all important Display None for print */
+  // Die Content!!! DIE!!!! //
   #main-nav,
   form,
   .cat,
@@ -138,7 +132,8 @@ $third: #6699CC !important;
   .t-photo,
   p.answer,
   #about-boagworld,
-  #branding
+  #branding,
+  #pageHeader
   {display: none!important;}
 
   .author {
@@ -323,9 +318,6 @@ $third: #6699CC !important;
     }
   }
 
-
-
-
   // To make the images greyscale
 
   img {
@@ -341,4 +333,8 @@ $third: #6699CC !important;
     }
 
 } // @media end
+
+// .nose {color: rgb(104, 86, 66)}
+
+
 
